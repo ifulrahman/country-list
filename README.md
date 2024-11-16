@@ -3,6 +3,12 @@
 ## Live Preview
 - Link : [Country List - Iful Rahman](https://iful-country-list.vercel.app/) 
 
+## Screenshots (Preview)
+
+<p align="center">
+  <img width="600" alt="image" src="./countryList.png"/>
+</p>
+
 ## Notes
 ✔ Responsive website (Desktop and mobile views) <br>
 ✔ Utilizing a state management library and git <br>
