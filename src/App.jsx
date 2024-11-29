@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import CountryList from './pages/CountryList';
 import CountryDetail from './pages/CountryDetail';
 import CooperationList from './pages/CooperationList';
+import CooperationList2 from './pages/CooperationList2';
 import './index.css';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<CountryList />} />
         <Route path="/country/:code" element={<CountryDetail />} />
         <Route path="/cooperation" element={<CooperationList />} />
+        <Route path='/cooperation2' element={<CooperationList2 />}/>
       </Routes>
     </Router>
   );

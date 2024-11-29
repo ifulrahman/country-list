@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CountryCard from '../components/CountryCard';
 import worldMap from '../assets/world-map.png';
+import CooperationList2 from './CooperationList2';
 
 const CountryList = () => {
   const [countries, setCountries] = useState([]); // State untuk menyimpan data negara yang diambil dari API
@@ -12,15 +13,34 @@ const CountryList = () => {
       .then((data) => setCountries(data)) // Menyimpan data negara ke state 'countries'
       .catch((error) => console.error('Error fetching countries:', error)); // Menangani error
   }, []);
+ 
+  function fiturSearch () {
+    const [search, setSearch] = useState([]);
+
+
+  }
 
   return (
     <div className="container p-4 mx-auto font-spartan">
       {/* World Map Image di Halaman Utama */}
+      <div>
+        <CooperationList2 />
+      </div>
       <div className="flex justify-center mb-4">
         <img src={worldMap} alt="World Map" className="h-auto w-96" />
       </div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Cari negara..."
+          onChange={(e) => fiturSearch(e.target.value)}
+        />
+      </div>
       
       <h1 className="mb-4 text-2xl font-bold text-center text-gray-800">Pilih Negara!</h1>
+
+      {/* Input untuk mencari negara */}
       
       {/* Menampilkan daftar negara dalam grid */}
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

@@ -59,6 +59,12 @@ const Navbar = () => {
           >
             Cooperation List
           </Link>
+          <Link
+            to="/cooperation2"
+            className="block px-4 py-2 mt-2 text-center text-white bg-gray-600 rounded-full hover:bg-gray-700 md:mt-0"
+          >
+            Cooperation List 2
+          </Link>
         </div>
         
       </div>

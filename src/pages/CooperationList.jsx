@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeCountry } from '../slices/cooperationSlice';
+import { useNavigate} from 'react-router-dom';
 
 const CooperationList = () => {
   const countries = useSelector((state) => state.cooperation.countries); // Mengambil data negara dari state Redux
   const dispatch = useDispatch(); // Menggunakan dispatch untuk mengirim aksi Redux
   const [notification, setNotification] = useState(null); // State untuk notifikasi
+  const navigate = useNavigate();
 
   const handleRemove = (country) => {
     dispatch(removeCountry(country)); // Menghapus negara dari cooperation list menu menggunakan Redux action
@@ -64,6 +66,11 @@ const CooperationList = () => {
                   className="object-contain w-20 h-20 mx-auto my-2" 
                 />
               </div>
+              
+              <button onClick={() => navigate(`/country/${country.cca3}`)}
+                className='justify-center w-16 h-16 font-serif text-white bg-blue-500 rounded-sm hover:bg-blue-600'>
+                Detail Negara
+              </button>
               
               {/* Tombol remove negara dari daftar cooperation list */}
               <button
